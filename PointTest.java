@@ -34,22 +34,34 @@ public class PointTest{
     @Theory
     public void reflexiveTest(Object x){
     	assumeTrue(x != null);
-    	assertTrue(x.equals(x));
     	System.out.println(x);
+        assertTrue(x.equals(x));
     }
 
     @Theory
-    public void SymmetryTest(Object x, Object y ){
-    	    	System.out.println(x +" "+ y );
+    public void SymmetryTest(Object x, Object y) {
+        assumeTrue(x != null);
+        assumeTrue(y != null);
+        System.out.println(x + " <> " + y );
+        assertTrue(y.equals(x) == x.equals(y));
     }
 
     @Theory
     public void transitiveTest(Object x, Object y , Object z){
+        assumeTrue(x != null);
+        assumeTrue(y != null);
+        assumeTrue(z != null);
+        System.out.println(x + " <> " + y + " <>" + z);
 
+        assumeTrue(x.equals(y));
+        assumeTrue(y.equals(z));
+
+        assertTrue(x.equals(z));
     }
 
+
     // my IDE does not run the Theories without atleast one @Test
-    @Test 
+    @Test
     public void test(){
 
     }

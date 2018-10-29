@@ -11,7 +11,7 @@ public class Point3 extends Point2{
 		this.z = 0; 
 	}
 
-	// above is liskov broken implementation of equals 
+	// below is liskov broken implementation of equals
 
 	public boolean equals(Object p){
 		if (p instanceof Point3)
