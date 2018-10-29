@@ -27,7 +27,7 @@ public class PointTest{
     @DataPoints public static Point3[] threeD = {
             new Point3(),
             new Point3(6,9,2),
-            new Point3(2,5,3),
+            new Point3(6,9,3),
             null
     };
 
