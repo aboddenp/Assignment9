@@ -14,6 +14,25 @@ import org.junit.experimental.theories.Theories;
 import org.junit.experimental.theories.Theory;
 
 
+/** 
+* @author Aster Bodden
+* @author Abdullah Alaqeel
+* By making general Junit Theories for the three relevant properties of the equals() contract in the Object class
+* Running these test will show that Liskov's implementation of equals() breaks the transitivity property 
+* This property means that if x = y and y = x implies x = z.
+* Point3 equals is broken because the equals method has been implemented as in the following pseudo code 
+*  equals(object):
+*		this.equals(object) if object is Point3 check that all fields are equal 
+*		this.equals(object) if object is Point2 treat this as a Point2 
+* this causes that two different point3 objects be equal to the same point2 
+*            Point3(6,9,2) != Point3(6,9,3) but both ==  Point2(6,9),
+*
+* Contributions: 
+*  Aster Bodden: implementation of Point2 equals method and Point 3 skeleton set up | summary of why p3 equals is wrong
+*  Abdullah Alaqee: implemented Junit theories to find which property was the broken one in liskov's implementation 
+*/
+
+
 @RunWith(Theories.class)
 public class PointTest{
 
